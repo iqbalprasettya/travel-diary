@@ -1,0 +1,65 @@
+@import '../../styles/base.scss';
+
+.container {
+  @include apply-at-lg-size {
+    @include wrapper;
+  }
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .card-item {
+      @include col;
+      justify-content: center;
+      gap: 30px;
+      background-color: $color-white;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 30px;
+      .card-head {
+        text-align: center;
+      }
+      .input-form {
+        @include col;
+        gap: 20px;
+        .input-item {
+          @include col;
+          label {
+            font-size: 16px;
+            font-weight: 900;
+          }
+          input {
+            font-weight: 600;
+            color: $color-dark-blue;
+            background-color: $color-light-blue;
+            outline: unset;
+            border: 2px solid $color-white-fade;
+            padding: 10px;
+            border-radius: 8px;
+            @include apply-at-lg-size {
+              width: 350px;
+              height: 30px;
+            }
+          }
+          input:focus {
+            border: 2px solid rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+      button {
+        color: $color-white;
+        background-color: #2e86de;
+        font-weight: 700;
+        font-size: 20px;
+        border-radius: 8px;
+        border: none;
+        padding: 15px;
+      }
+      .regis {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+}
