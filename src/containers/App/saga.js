@@ -1,13 +1,13 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 
-import { ping } from '@domain/api';
+import { register } from '@domain/api';
 import { showPopup, setLoading } from '@containers/App/actions';
-import { PING } from '@containers/App/constants';
+import { REGISTER } from '@containers/App/constants';
 
-function* doPing() {
+function* doRegister() {
   yield put(setLoading(true));
   try {
-    yield call(ping);
+    yield call(register);
   } catch (error) {
     yield put(showPopup());
   }
@@ -15,5 +15,5 @@ function* doPing() {
 }
 
 export default function* appSaga() {
-  yield takeLatest(PING, doPing);
+  yield takeLatest(REGISTER, doRegister);
 }

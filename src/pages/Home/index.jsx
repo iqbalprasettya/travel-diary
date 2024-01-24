@@ -2,19 +2,43 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 
-import { ping } from '@containers/App/actions';
+import classes from './style.module.scss';
+
+// import { ping } from '@containers/App/actions';
+
+import GridData from '../../components/GridData';
 
 const Home = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(ping());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(ping());
+  // }, [dispatch]);
 
   return (
-    <div>
-      <FormattedMessage id="app_greeting" />
-    </div>
+    <>
+      {/* <FormattedMessage id="app_greeting" /> */}
+      <div className={classes['background-banner']}>
+        <div className={classes['container']}>
+          <h1>
+            The Journey <br /> you ever dreamed of.
+          </h1>
+          <p>We made a tool so you can easily keep & share your travel memories. But there is a lot more</p>
+        </div>
+      </div>
+      <section className={classes['journey']}>
+        <div className={classes['container']}>
+          <div className={classes['journey-header']}>
+            <h2>Journey</h2>
+          </div>
+          <div className={classes['input-search']}>
+            <input placeholder="Find Journey" type="text" name="" id="" />
+            <button type="submit">Search</button>
+          </div>
+        </div>
+        <GridData />
+      </section>
+    </>
   );
 };
 

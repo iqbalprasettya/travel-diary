@@ -1,1 +1,82 @@
 @import '@styles/base';
+
+body {
+  // background-color: $color-blue;
+  font-family: $font-roboto;
+}
+
+.background-banner {
+  color: $color-white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../static/images/banner1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 40px;
+  .container {
+    @include col;
+    gap: 10px;
+    @include apply-at-lg-size {
+      padding: 3rem 2rem;
+    }
+    h1 {
+      font-weight: 100;
+      font-style: italic;
+      @include apply-at-lg-size {
+        font-size: 64px;
+      }
+    }
+    p {
+      color: $color-white-fade;
+      font-weight: 100;
+      @include apply-at-lg-size {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.journey {
+  .container {
+    @include col;
+    justify-content: center;
+    gap: 40px;
+    padding: 2rem;
+    @include apply-at-lg-size {
+      padding: 3rem;
+    }
+    .journey-header h2 {
+      font-weight: 900;
+    }
+    .input-search {
+      @include row;
+      text-align: center;
+      justify-content: center;
+      font-family: $font-poppins;
+      input {
+        color: $color-dark-blue;
+        background-color: $color-white;
+        font-family: $font-poppins;
+        border-radius: 6px 0px 0px 6px;
+        outline: unset;
+        border: unset;
+        height: 55px;
+        padding: 5px 20px;
+        @include apply-at-md-size {
+          width: 940px;
+        }
+        @include apply-at-s-size {
+            width: 200px;
+            height: 40px;
+        }
+      }
+      button {
+        color: $color-white;
+        background-color: $color-blue;
+        border-radius: 0px 6px 6px 0px;
+        border: none;
+        outline: unset;
+        padding: 0 20px;
+      }
+    }
+  }
+  
+}

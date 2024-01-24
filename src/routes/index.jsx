@@ -1,4 +1,5 @@
 import MainLayout from '@layouts/MainLayout';
+import LoginRegisLayout from '@layouts/LoginRegisLayout';
 
 import Home from '@pages/Home';
 import Register from '@pages/Register';
@@ -18,14 +19,14 @@ const routes = [
     name: 'Register',
     protected: false,
     component: Register,
-    layout: MainLayout,
+    layout: LoginRegisLayout,
   },
   {
     path: '/login',
     name: 'Login',
     protected: false,
     component: Login,
-    layout: MainLayout,
+    layout: LoginRegisLayout,
   },
   { path: '*', name: 'Not Found', component: NotFound, layout: MainLayout, protected: false },
 ];

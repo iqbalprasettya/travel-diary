@@ -1,4 +1,4 @@
-import { SET_LOCAL, SET_THEME, SET_POPUP, SET_LOADING, PING } from '@containers/App/constants';
+import { SET_LOCAL, SET_THEME, SET_POPUP, SET_LOADING, REGISTER } from '@containers/App/constants';
 
 export const setLocale = (locale) => ({
   type: SET_LOCAL,
@@ -33,6 +33,6 @@ export const setLoading = (loading) => ({
   loading,
 });
 
-export const ping = () => ({
-  type: PING,
+export const register = () => ({
+  type: REGISTER,
 });

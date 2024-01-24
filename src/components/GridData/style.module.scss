@@ -1,0 +1,38 @@
+@import '@styles/base';
+
+.grid-wrapper {
+  font-family: $font-poppins;
+  @include apply-at-lg-size {
+    padding: 2rem 1rem;
+  }
+  .grid {
+    gap: 30px;
+    .grid-item {
+      .card {
+        background-color: $color-white;
+        border-radius: 6px;
+        width: 300px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        .card-img img {
+          width: 100%;
+          border-radius: 6px;
+        }
+        .card-content {
+          padding: 7px 10px;
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 13px;
+          }
+          .time {
+            color: rgba(0, 0, 0, 0.345);
+            font-size: 11px;
+            margin-bottom: 5px
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import classes from './style.module.scss';
 
@@ -9,7 +10,9 @@ const index = () => {
         <div className={classes['card']}>
           <div className={classes['card-item']}>
             <div className={classes['card-head']}>
-              <h2>Login</h2>
+              <h2>
+                <FormattedMessage id="app_login_header_label" />
+              </h2>
             </div>
             <div className={classes['input-form']}>
               <div className={classes['input-item']}>
@@ -22,10 +25,17 @@ const index = () => {
               </div>
             </div>
             {/* <div className={classes['btn-submit']}> */}
-            <button type="submit">Login</button>
+            <button type="submit">
+              <FormattedMessage id="app_login_header_label" />
+            </button>
             {/* </div> */}
-            <div className={classes["regis"]}>
-              <p>Don't have an account? ? Klik <a href="">Here</a></p>
+            <div className={classes['regis']}>
+              <p>
+                <FormattedMessage id="app_login_regis_label" />
+                <a href="/register">
+                  <FormattedMessage id="app_login_regis_label_link" />
+                </a>
+              </p>
             </div>
           </div>
         </div>
