@@ -1,25 +1,27 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 
 import { showPopup, setLoading } from '@containers/App/actions';
-import { fetchPokemon, register } from '@domain/api';
-import { setPokemon } from './actions';
-import { FETCH_POKEMON, REGISTER } from './constants';
+import { register } from '@domain/api';
+
+import { REGISTER } from './constants';
+import { setLogin } from '@containers/Client/actions';
 
 function* doRegister({ dataUser, cbSuccess, cbFailed }) {
   yield put(setLoading(true));
   try {
-    yield call(register, dataUser);
-    // const user = {
-    //   email: 'blabla'
-    // }
-    // cbSuccess && cbSuccess(user);
+    const { data } = yield call(register, dataUser)
+    yield put(setLogin({
+      login: true,
+      token: data.token
+    }))
+
   } catch (error) {
     cbFailed && cbFailed();
   }
   yield put(setLoading(false));
 }
 
-export default function* homeSaga() {
-  console.log(doRegister, '<<<< saga');
+export default function* registerSaga() {
+  // console.log(doRegister, '<<<< saga');
   yield takeLatest(REGISTER, doRegister);
 }

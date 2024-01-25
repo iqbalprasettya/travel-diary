@@ -20,50 +20,30 @@ const index = () => {
   const onChangeHandler = (value, type) => {
     setUser({
       ...user,
-      [type]: value
-    })
-  }
+      [type]: value,
+    });
+  };
 
   const onSubmit = () => {
     const dataUser = {
       fullname: encryptPayload(user.fullname),
       email: encryptPayload(user.email),
       password: encryptPayload(user.password),
-    }
-    dispatch(register(
-      dataUser,
-      () => {
-        console.log("Callback success");
-        navigate('/login');
-      },
-      (error) => {
-        console.log(error);
-      }
-    ))
-    // console.log(dataUser)
-  }
-
-  // const [fullName, setFullName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-
-  // const onSubmit = () => {
-  //   dispatch(
-  //     register({
-  //       fullName: encryptPayload(fullName),
-  //       email: encryptPayload(email),
-  //       password: encryptPayload(password),
-  //     })
-  //   );
-  // };
-
-  // const doRegister = () => {
-  //   try {
-  //     onSubmit();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+    };
+    dispatch(
+      register(
+        dataUser,
+        () => {
+          console.log('Callback success');
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    );
+    // console.log(dataUser, "<<< OnSubmit")
+    navigate('/login');
+  };
 
   return (
     <>
@@ -72,7 +52,7 @@ const index = () => {
           <div className={classes['card-item']}>
             <div className={classes['card-head']}>
               <h2>
-                <FormattedMessage id="app_login_header_label" />
+                <FormattedMessage id="app_regis_header_label" />
               </h2>
             </div>
             <div className={classes['input-form']}>
@@ -91,7 +71,7 @@ const index = () => {
             </div>
             {/* <div className={classes['btn-submit']}> */}
             <button type="submit" onClick={() => onSubmit()}>
-              <FormattedMessage id="app_login_header_label" />
+              <FormattedMessage id="app_regis_header_label" />
             </button>
             {/* </div> */}
           </div>

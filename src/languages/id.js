@@ -8,6 +8,7 @@ export default {
   app_popup_error_message: 'Maaf, telah terjadi kesalahan. Silakan coba beberapa saat lagi',
   app_popup_close_button_label: 'Tutup',
   app_login_header_label: 'Masuk',
+  app_regis_header_label: 'Daftar',
   app_login_regis_label: 'Tidak punya akun? Klik ',
   app_login_regis_label_link: 'Disini',
 

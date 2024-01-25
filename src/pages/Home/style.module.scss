@@ -63,6 +63,9 @@ body {
         @include apply-at-md-size {
           width: 940px;
         }
+        @include apply-at-lg-size {
+          width: 80%;
+        }
         @include apply-at-s-size {
             width: 200px;
             height: 40px;

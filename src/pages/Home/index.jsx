@@ -1,19 +1,27 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 
 import classes from './style.module.scss';
 
-// import { ping } from '@containers/App/actions';
+import { selectLogin } from '@containers/Client/selectors';
 
 import GridData from '../../components/GridData';
 
 const Home = () => {
   // const dispatch = useDispatch();
 
+  // const [isLogined, setIsLogined] = useState(false);
+  // // Get data from store
+  // const login = useSelector(selectLogin);
+
   // useEffect(() => {
-  //   dispatch(ping());
-  // }, [dispatch]);
+  //   if (login) {
+  //     setIsLogined(true);
+  //   } else {
+  //     setIsLogined(false);
+  //   }
+  // }, [login]);
 
   return (
     <>
